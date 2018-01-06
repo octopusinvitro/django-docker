@@ -1,0 +1,13 @@
+htmlcov
+.coverage
+
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+.git
+.gitignore
+.gitlab-ci.yml
+
+app/tests
+README.md

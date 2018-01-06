@@ -1,0 +1,6 @@
+env
+venv
+htmlcov
+.coverage
+.ipynb_checkpoints
+*/locale/**/*.mo

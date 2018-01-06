@@ -1,0 +1,4 @@
+#!/bin/bash
+
+clear
+python3 -m flake8 *.py django_docker app --max-line-length=100 --exclude=app/migrations

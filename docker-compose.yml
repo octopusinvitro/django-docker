@@ -1,0 +1,23 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+services:
+  db:
+    container_name: django_docker_db
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  web:
+    container_name: django_docker_web
+    build: .
+    command: python3 /app/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db

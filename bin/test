@@ -1,0 +1,11 @@
+#!/bin/bash
+
+clear
+
+if [ -z $1 ]; then
+  coverage run --source='app' manage.py test --shuffle --keepdb
+else
+  coverage run --source='app' manage.py test --shuffle --keepdb $1
+fi
+
+coverage html --omit=app/migrations/*
